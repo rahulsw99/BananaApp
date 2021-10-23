@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "IS4301-BananaApp"
+  "defaultProject": "IS4301-BananaApp",
+  "cli": {
+    "analytics": false
+  }
 }
