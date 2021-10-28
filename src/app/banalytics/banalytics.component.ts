@@ -98,7 +98,6 @@ export class BanalyticsComponent implements OnInit {
       ]
     };
     
-    console.log(Array.from({length: 7}, () => (Math.floor(Math.random() * 70)) + 10))
     var smile_option = {
       color: [
         '#428bca',
@@ -195,8 +194,6 @@ export class BanalyticsComponent implements OnInit {
     email_chart.setOption(email_option);
     smile_chart.setOption(smile_option);
     meetings_chart.setOption(meetings_option);
-    
-    
   } 
   
 }
