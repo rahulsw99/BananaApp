@@ -5,7 +5,7 @@ import * as echarts from 'echarts';
   selector: 'app-banalytics',
   templateUrl: './banalytics.component.html',
   styleUrls: ['./banalytics.component.css']
-})
+}) 
 export class BanalyticsComponent implements OnInit {
   options: any;
   constructor() {}
