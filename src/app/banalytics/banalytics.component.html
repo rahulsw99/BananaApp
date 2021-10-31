@@ -1,15 +1,17 @@
 <p>banalytics works!</p>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<!-- jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 <!-- Popper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
 <div class="row">
     <div class="col-md-4">
         <div echarts class="demo-chart" style="width: 33%; min-height: 400px" id="screen-time"></div>
@@ -28,16 +30,55 @@
 </div>
 <div class="row">
     <div class="col-md-3">
-
+        <div class="progress mx-auto" data-value='80'>
+            <span class="progress-left">
+                      <span class="progress-bar border-primary"></span>
+            </span>
+            <span class="progress-right">
+                      <span class="progress-bar border-primary"></span>
+            </span>
+            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+            </div>
+        </div>
     </div>
     <div class="col-md-3">
     </div>
     <div class="col-md-3">
     </div>
 </div>
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+<mat-form-field appearance="fill">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="selected">
+        <mat-option>None</mat-option>
+        <mat-option value="option1">Option 1</mat-option>
+        <mat-option value="option2">Option 2</mat-option>
+        <mat-option value="option3">Option 3</mat-option>
+    </mat-select>
+</mat-form-field>
 
+<p>You selected: {{selected}}</p>
 
 <script>
+    document.getElementByClassName("progress").each(function() {
+
+        let value = this.attr('data-value');
+        let left = this.find('.progress-left .progress-bar');
+        let right = this.find('.progress-right .progress-bar');
+        if (value > 0) {
+            if (value <= 50) {
+                right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+            } else {
+                right.css('transform', 'rotate(180deg)')
+                left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+            }
+        }
+    })
+
+    function percentageToDegrees(percentage) {
+        return percentage / 100 * 360
+    }
 </script>
 <style>
     .progress {
