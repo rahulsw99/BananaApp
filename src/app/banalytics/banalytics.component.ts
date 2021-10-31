@@ -10,7 +10,9 @@ export class BanalyticsComponent implements OnInit {
   options: any;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
   
   ngAfterViewInit(): void {
     const ec = echarts as any;
