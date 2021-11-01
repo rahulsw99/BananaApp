@@ -1,215 +1,292 @@
-<p>banalytics works!</p>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<!-- jQuery library -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:#1d3150">
+    <a class="navbar-brand" href="#" style="font-family: 'Papyrus';">Banalytics</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" style="margin: auto;">
+            <li class="nav-item" style="margin: auto;">
+                <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-bar-chart-fill" style="color:white"></i>&nbsp;Dashboard</a>
+            </li>
+            <li class="nav-item" style="margin: auto;">
+                <a class="nav-link" href="#"><span class="bi bi-table"></span>&nbsp;Tables</a>
+            </li>
+            <li class="nav-item" style="margin: auto;">
+                <a class="nav-link" href="#"><i class="bi bi-exclamation-triangle"></i>&nbsp;Alerts</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" style="color:white">
+            <i class="bi bi-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="bi bi-chat-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="bi bi-bell"></i> &nbsp;&nbsp; User &nbsp;&nbsp;
+            <i class="bi bi-chevron-down"></i>
+        </form>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <select class="form-control" id="exampleFormControlSelect1" style="color:#3F5D7E">
+                  <option>10/05/21 - 16/5/21</option>
+                  
+                </select>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+            <h3 style="color:#B1C7DF">Overall statistics&nbsp;
+                <i class="bi bi-chevron-down"></i></h3>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-primary btn-sm" style="background-color:#B1C7DF;color:#3F5D7E;margin-right: 5px;"> <i class="bi bi-cloud-download"></i>&nbsp;&nbsp;SHARE</button>
+            <button type="button" class="btn btn-primary btn-sm" style="background-color:#B1C7DF;color:#3F5D7E"><i class="bi bi-share"></i>&nbsp;&nbsp;EXPORT</button>
+        </div>
+    </div>
+    <br>
+    <br>
 
-
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-
+    <div class='row'>
+        <div class="col-md-3">
+            <small style="color: #88E091;">+1 HOUR &nbsp;&nbsp;<i class="bi bi-arrow-up-circle-fill"></i></small>
+            <h2>60 HOURS</h2>
+            <small style="color: #7F7F7F;">Screen Time</small>
+        </div>
+        <div class="col-md-3">
+            <small style="color: #FF7E78;">-2.3 MEETINGS &nbsp;&nbsp;<i class="bi bi-arrow-down-circle-fill"></i></small>
+            <h2>19.6 MEETINGS</h2>
+            <small style="color: #7F7F7F;">Calendar Meetings</small>
+        </div>
+        <div class="col-md-3">
+            <small style="color: #88E091;">+2.5 &nbsp;&nbsp;<i class="bi bi-arrow-up-circle-fill"></i></small>
+            <h2>97.6 EMAILS</h2>
+            <small style="color: #7F7F7F;">Emails</small>
+        </div>
+        <div class="col-md-3">
+            <small style="color: #88E091;">+0.7 HOUR &nbsp;&nbsp;<i class="bi bi-arrow-up-circle-fill"></i></small>
+            <h2>7 HOURS</h2>
+            <small style="color: #7F7F7F;">Duration of Smiles</small>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
 
 <div class="row">
     <div class="col-md-4">
-        <div echarts class="demo-chart" style="width: 33%; min-height: 400px" id="screen-time"></div>
+        <div class="card">
+            <div class="card-body" style="padding: 10px;">
+                <div class='row'>
+                    <div class="col-8">
+                        <strong> Average Screen Time</strong>
+                        <br> <small style="color: #7F7F7F;">This week</small>
+                    </div>
+                    <div class="col-4">
+                        <i class="bi bi-gear" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-cloud-download" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-share" style="float:right;margin-right: 5px;"></i>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class='row'>
+                        <div class="col">
+                            <div echarts class="demo-chart" style="width: 100%; min-height: 400px" id="screen-time"></div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="col">
+                            <i class="bi bi-arrows-angle-expand"></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body" style="padding: 10px;">
+                <div class='row'>
+                    <div class="col-8">
+                        <strong>Average Email</strong>
+                        <br>
+                        <small style="color: #7F7F7F;">This week</small>
+                    </div>
+                    <div class="col-4">
+                        <i class="bi bi-gear" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-cloud-download" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-share" style="float:right;margin-right: 5px;"></i>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class='row'>
+                        <div class="col">
+                            <div echarts class="demo-chart" style="width: 100%; min-height: 400px" id="emails"></div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="col">
+                            <i class="bi bi-arrows-angle-expand"></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="col-md-4">
-        <div echarts class="demo-chart" style="width: 33%; min-height: 400px" id="emails"></div>
-    </div>
-    <div class="col-md-4">
-        <div echarts class="demo-chart" style="width: 33%; min-height: 400px" id="meetings"></div>
+        <div class="card">
+            <div class="card-body" style="padding: 10px;">
+                <div class='row'>
+                    <div class="col-8">
+                        <strong>Average Meetings</strong>
+                        <br>
+                        <small style="color: #7F7F7F;">This week</small>
+                    </div>
+                    <div class="col-4">
+                        <i class="bi bi-gear" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-cloud-download" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-share" style="float:right;margin-right: 5px;"></i>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class='row'>
+                        <div class="col">
+                            <div echarts class="demo-chart" style="width: 100%; min-height: 400px" id="meetings"></div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="col">
+                            <i class="bi bi-arrows-angle-expand"></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
+<br>
+<div class="card">
+    <div class="card-body" style="padding: 10px;">
+        <div class='row'>
+            <div class="col-8">
+                <strong>Overall Statistics</strong>
+                <br>
+                <small style="color: #7F7F7F;">This week</small>
+            </div>
+            <div class="col-4">
+                <i class="bi bi-gear" style="float:right;margin-right: 5px;"></i>
+                <i class="bi bi-cloud-download" style="float:right;margin-right: 5px;"></i>
+                <i class="bi bi-share" style="float:right;margin-right: 5px;"></i>
+            </div>
+        </div>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <div class='row'>
+                <div class="col">
+                    <table datatable class="row-border hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>First name</th>
+                                <th>Last name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Foo</td>
+                                <td>Bar</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Someone</td>
+                                <td>Youknow</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Iamout</td>
+                                <td>Ofinspiration</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Yoda</td>
+                                <td>Skywalker</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Patrick</td>
+                                <td>Dupont</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Barack</td>
+                                <td>Obama</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>François</td>
+                                <td>Holland</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col">
+                    <i class="bi bi-arrows-angle-expand"></i>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<br>
 <div class="row">
     <div class="col-md-4">
-        <div echarts class="demo-chart" style="width: 33%; min-height: 400px" id="smiles"></div>
+        <div class="card">
+            <div class="card-body" style="padding: 10px;">
+                <div class='row'>
+                    <div class="col-8">
+                        Average Screen Time
+                        <br>
+                        <small style="color: #7F7F7F;">This week</small>
+                    </div>
+                    <div class="col-4">
+                        <i class="bi bi-gear" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-cloud-download" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-share" style="float:right;margin-right: 5px;"></i>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class='row'>
+                        <div class="col">
+                            <div echarts class="demo-chart" style="width: 100%; min-height: 400px" id="smiles"></div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="col">
+                            <i class="bi bi-arrows-angle-expand"></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 <div echarts class="demo-chart" style="width: 100%; min-height: 400px" id="eating-time"></div>
 <div echarts class="demo-chart" style="width: 100%; min-height: 400px" id="eating-while-working"></div>
-
-<div class="row">
-    <div class="col-md-3">
-        <div class="progress mx-auto" data-value='80'>
-            <span class="progress-left">
-                      <span class="progress-bar border-primary"></span>
-            </span>
-            <span class="progress-right">
-                      <span class="progress-bar border-primary"></span>
-            </span>
-            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-3">
-    </div>
-</div>
-
-
-<script>
-    document.getElementByClassName("progress").each(function() {
-
-        let value = this.attr('data-value');
-        let left = this.find('.progress-left .progress-bar');
-        let right = this.find('.progress-right .progress-bar');
-        if (value > 0) {
-            if (value <= 50) {
-                right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-            } else {
-                right.css('transform', 'rotate(180deg)')
-                left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-            }
-        }
-    })
-
-    function percentageToDegrees(percentage) {
-        return percentage / 100 * 360
-    }
-</script>
-<style>
-    .progress {
-        width: 150px;
-        height: 150px;
-        background: none;
-        position: relative;
-    }
-    
-    .progress::after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        border: 6px solid #eee;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    
-    .progress>span {
-        width: 50%;
-        height: 100%;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        z-index: 1;
-    }
-    
-    .progress .progress-left {
-        left: 0;
-    }
-    
-    .progress .progress-bar {
-        width: 100%;
-        height: 100%;
-        background: none;
-        border-width: 6px;
-        border-style: solid;
-        position: absolute;
-        top: 0;
-    }
-    
-    .progress .progress-left .progress-bar {
-        left: 100%;
-        border-top-right-radius: 80px;
-        border-bottom-right-radius: 80px;
-        border-left: 0;
-        -webkit-transform-origin: center left;
-        transform-origin: center left;
-    }
-    
-    .progress .progress-right {
-        right: 0;
-    }
-    
-    .progress .progress-right .progress-bar {
-        left: -100%;
-        border-top-left-radius: 80px;
-        border-bottom-left-radius: 80px;
-        border-right: 0;
-        -webkit-transform-origin: center right;
-        transform-origin: center right;
-    }
-    
-    .progress .progress-value {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-</style>
-<table datatable class="row-border hover">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>First name</th>
-            <th>Last name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Foo</td>
-            <td>Bar</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Iamout</td>
-            <td>Ofinspiration</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Yoda</td>
-            <td>Skywalker</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Patrick</td>
-            <td>Dupont</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>Barack</td>
-            <td>Obama</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>François</td>
-            <td>Holland</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>Michel</td>
-            <td>Popo</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>Chuck</td>
-            <td>Norris</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>Simon</td>
-            <td>Robin</td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>Louis</td>
-            <td>Lin</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>Zelda</td>
-            <td>Link</td>
-        </tr>
-    </tbody>
-</table>

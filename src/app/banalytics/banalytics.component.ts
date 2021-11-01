@@ -27,9 +27,6 @@ export class BanalyticsComponent implements OnInit {
       tooltip: {
         trigger: 'axis'
       },
-      title: {
-        text: 'Average Screen Time'
-      },
       legend: {
     top: 'bottom',
 
@@ -68,9 +65,6 @@ export class BanalyticsComponent implements OnInit {
       tooltip: {
         trigger: 'axis'
       },
-      title: {
-        text: 'Average Email'
-      },
       legend: {
     top: 'bottom',
 
@@ -106,9 +100,6 @@ export class BanalyticsComponent implements OnInit {
       ],
       tooltip: {
         trigger: 'axis'
-      },
-      title: {
-        text: 'Average Smiles'
       },
       legend: {
     top: 'bottom',
@@ -152,9 +143,6 @@ export class BanalyticsComponent implements OnInit {
       tooltip: {
         trigger: 'axis'
       },
-      title: {
-        text: 'Average Meetings'
-      },
       legend: {
     top: 'bottom',
 
@@ -182,9 +170,6 @@ export class BanalyticsComponent implements OnInit {
     };
     
     var eating_while_working_option = {
-      title: {
-        text: 'Eating while working'
-      },
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -223,9 +208,6 @@ export class BanalyticsComponent implements OnInit {
     };
 
     var eating_time_option = {
-      title: {
-            text: 'Amount of time spent eating'
-          },
            tooltip: {
             trigger: 'axis',
             axisPointer: {
