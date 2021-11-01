@@ -15,7 +15,8 @@ export class BanalyticsComponent implements OnInit {
   ngAfterViewInit(): void {
     const ec = echarts as any;
 
- 
+
+    
     
     var screen_time_option = {
       color: [
