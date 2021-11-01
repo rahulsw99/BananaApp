@@ -17,7 +17,6 @@ export class BanalyticsComponent implements OnInit {
 
  
     
-    
     var screen_time_option = {
       color: [
         '#428bca',
