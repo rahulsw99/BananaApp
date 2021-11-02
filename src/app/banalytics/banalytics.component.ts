@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from "@angular/router";
   selector: 'app-banalytics',
   templateUrl: './banalytics.component.html',
   styleUrls: ['./banalytics.component.css']
-})
+}) 
 export class BanalyticsComponent implements OnInit {
   options: any;
   constructor(private router: Router, protected route: ActivatedRoute) {}
@@ -80,11 +80,7 @@ export class BanalyticsComponent implements OnInit {
   
   
   ngAfterViewInit(): void {
-    const ec = echarts as any;
-
-
-
-    
+    const ec = echarts as any; 
     var screen_time_option = {
       color: [
         '#428bca',
@@ -94,9 +90,6 @@ export class BanalyticsComponent implements OnInit {
       ],
       tooltip: {
         trigger: 'axis'
-      },
-      title: {
-        text: 'Average Screen Time'
       },
       legend: {
     top: 'bottom',
@@ -136,9 +129,6 @@ export class BanalyticsComponent implements OnInit {
       tooltip: {
         trigger: 'axis'
       },
-      title: {
-        text: 'Average Email'
-      },
       legend: {
     top: 'bottom',
 
@@ -165,7 +155,6 @@ export class BanalyticsComponent implements OnInit {
       ]
     };
     
-    console.log(Array.from({length: 7}, () => (Math.floor(Math.random() * 70)) + 10))
     var smile_option = {
       color: [
         '#428bca',
@@ -175,9 +164,6 @@ export class BanalyticsComponent implements OnInit {
       ],
       tooltip: {
         trigger: 'axis'
-      },
-      title: {
-        text: 'Average Smiles'
       },
       legend: {
     top: 'bottom',
@@ -221,9 +207,6 @@ export class BanalyticsComponent implements OnInit {
       tooltip: {
         trigger: 'axis'
       },
-      title: {
-        text: 'Average Meetings'
-      },
       legend: {
     top: 'bottom',
 
@@ -250,20 +233,90 @@ export class BanalyticsComponent implements OnInit {
       ]
     };
     
+    var eating_while_working_option = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      legend: {
+            top: 'bottom',
+            data: ["Your Department", "Yue Yang"]
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'value'
+      },
+      yAxis: {
+        type: 'category',
+        data: ['Eating duration', 'Eating while working duration']
+      },
+      series: [
+        {
+          name: 'Your Department',
+          type: 'bar',
+          data: [2,1]
+        },
+        {
+          name: 'Yue Yang',
+          type: 'bar',
+          data: [4, 3]
+        }
+      ]
+    };
+
+    var eating_time_option = {
+           tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
+            }
+          },
+      xAxis: {
+        type: 'category',
+        data: ["0800", "0900", "1000", "1100", "1200", 1300, 1400, 1500, 1600, 1700, 1800]
+      },
+      yAxis: {
+        max: 60,
+        type: 'value'
+      },
+      series: [
+        {
+          data: [5, 7, 0, 0, 0, 7, 10, 0, 3, 0, 0],
+          type: 'bar',
+          showBackground: true,
+          name: 'minutes'
+        }
+      ]
+    };
+
     const screen_time_container = document.getElementById('screen-time');
     const email_container = document.getElementById('emails');
     const smile_container = document.getElementById('smiles');
     const meetings_container = document.getElementById('meetings');
+    const eating_time_container = document.getElementById('eating-time');
+    const eating_while_working_container = document.getElementById('eating-while-working');
+
     const screen_time_chart = echarts.init(screen_time_container);
     const smile_chart = echarts.init(smile_container);
     const email_chart = echarts.init(email_container);
     const meetings_chart = echarts.init(meetings_container);
+    const eating_time_chart = echarts.init(eating_time_container);
+    const eating_while_working_chart = echarts.init(eating_while_working_container);
+
     screen_time_chart.setOption(screen_time_option);
     email_chart.setOption(email_option);
     smile_chart.setOption(smile_option);
     meetings_chart.setOption(meetings_option);
-    
-    
+    eating_time_chart.setOption(eating_time_option);
+    eating_while_working_chart.setOption(eating_while_working_option);
+
   } 
   
 }
