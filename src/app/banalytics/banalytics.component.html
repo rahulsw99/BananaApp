@@ -1,8 +1,12 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:#1d3150">
     <a class="navbar-brand" href="#" style="font-family: 'Papyrus';">Banalytics</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+    <br />
+
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto" style="margin: auto;">
@@ -196,51 +200,43 @@
         <li class="list-group-item">
             <div class='row'>
                 <div class="col">
-                    <table datatable class="row-border hover">
+                    <table datatable class=" table row-border hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>First name</th>
-                                <th>Last name</th>
+                                <th width="4%">ID</th>
+                                <th width="8%">Member</th>
+                                <th width="8%">Status</th>
+                                <th width="8%">Rating</th>
+                                <th width="8%">Screen Time</th>
+                                <th width="8%">Email</th>
+                                <th width="8%">Meeting</th>
+                                <th width="8%">Smiles</th>
+                                <th width="8%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Foo</td>
-                                <td>Bar</td>
+                            <tr *ngFor="let user of users| paginate
+                            : {
+                                itemsPerPage: itemsPerPage,
+                                currentPage: pageId,
+                                id: rpage,
+                                totalItems: totalItems
+                              }; let i = index">
+                                <td>{{i+1}}
+                                </td>
+                                <td>{{user.name}}</td>
+                                <td>{{user.status}}</td>
+                                <td>{{user.rating}}</td>
+                                <td>{{user.screenTime}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.meeting}}</td>
+                                <td>{{user.smiles}} min</td>
+                                <td>
+                                    <button class="btn btn-outline-primary" type="button" title="Edit" (click)="onClick(user.name)">Redirect
+                                  <i class="fa fa-edit" aria-hidden="true"></i>
+                                </button>
+                                </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Someone</td>
-                                <td>Youknow</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Iamout</td>
-                                <td>Ofinspiration</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Yoda</td>
-                                <td>Skywalker</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Patrick</td>
-                                <td>Dupont</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Barack</td>
-                                <td>Obama</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>François</td>
-                                <td>Holland</td>
-                            </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -290,3 +286,16 @@
 </div>
 <div echarts class="demo-chart" style="width: 100%; min-height: 400px" id="eating-time"></div>
 <div echarts class="demo-chart" style="width: 100%; min-height: 400px" id="eating-while-working"></div>
+
+<br />
+
+<div class="form-control">
+    Select XX:
+    <select>
+      <option *ngFor="let dropDown of dropDownOptions" (ngModelChange)="onChange()">
+        {{dropDown}}
+      </option>
+    </select>
+</div>
+
+<br />

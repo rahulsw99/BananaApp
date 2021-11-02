@@ -5,15 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BanalyticsComponent } from './banalytics/banalytics.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { NgxPaginationModule } from "ngx-pagination";
+import { BanalyticsIndividualComponent } from './banalytics-individual/banalytics-individual.component';
 @NgModule({
   declarations: [
     AppComponent,
-    BanalyticsComponent
+    BanalyticsComponent,
+    BanalyticsIndividualComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DataTablesModule,
+    NgxPaginationModule,
     NgxEchartsModule.forRoot({
       /**
        * This will import all modules from echarts.

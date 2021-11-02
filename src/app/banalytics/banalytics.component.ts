@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-banalytics',
@@ -8,10 +9,73 @@ import * as echarts from 'echarts';
 }) 
 export class BanalyticsComponent implements OnInit {
   options: any;
-  constructor() {}
+  constructor(private router: Router, protected route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  rpage = 'Tracker' + Math.round(Math.random() * 100000);
+  pageId = 1;
+  itemsPerPage = 30;
+  totalItems = 30;
 
+  dropDownOptions: any[] = [
+    "A", "B", "C"
+  ]
+
+  users: any[] = [
+    {
+      name:"Yue Yang",
+      status:"Good",
+      rating: 80,
+      screenTime: 50,
+      email: 70,
+      meeting: 20,
+      smiles: 30
+    },
+    {
+      name:"Jason Chen",
+      status:"Average",
+      rating: 55,
+      screenTime: 60,
+      email: 80,
+      meeting: 30,
+      smiles: 25
+    },
+    {
+      name:"Isabelle Ong",
+      status:"Poor",
+      rating: 30,
+      screenTime: 80.5,
+      email: 90,
+      meeting: 30,
+      smiles: 15
+    },
+    {
+      name:"Rahul Wadhwa",
+      status:"Good",
+      rating: 75,
+      screenTime: 45,
+      email: 65.5,
+      meeting: 28,
+      smiles: 42
+    },
+    {
+      name:"Kefen Chen",
+      status:"Average",
+      rating: 60,
+      screenTime: 55,
+      email: 48,
+      meeting: 20,
+      smiles: 28
+    }
+  ]
+
+  ngOnInit(): void {}
+
+  onClick(name) {
+    this.router.navigate(["banalytics/individual/" + name])
+  }
+
+  onChange() {
+    
   }
   
   ngAfterViewInit(): void {
