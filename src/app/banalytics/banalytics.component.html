@@ -233,8 +233,8 @@
                                 <td>{{user.smiles}} min</td>
                                 <td>
                                     <button class="btn btn-outline-primary" type="button" title="Edit" (click)="onClick(user.name)">Redirect
-                                  <i class="fa fa-edit" aria-hidden="true"></i>
-                                </button>
+                                        <i class="fa fa-edit" aria-hidden="true"></i>
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -292,11 +292,15 @@
 
 <div class="form-control">
     Select XX:
-    <select>
-      <option *ngFor="let dropDown of dropDownOptions" (ngModelChange)="onChange()">
+    <select [(ngModel)]="chosenDropDown">
+      <option *ngFor="let dropDown of dropDownOptions" [value]="dropDown">
         {{dropDown}}
       </option>
     </select>
+    <br />
+    <button class="btn btn-outline-primary" type="button" title="Edit" (click)="onChange()">Go
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </button>
 </div>
 
 <br />
