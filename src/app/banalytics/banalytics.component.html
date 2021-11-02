@@ -1,4 +1,4 @@
-<p>banalytics works!</p>
+<br />
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
@@ -35,6 +35,56 @@
     <div class="col-md-3">
     </div>
 </div>
+
+<br />
+
+<div class="form-control">
+    Select XX:
+    <select>
+      <option *ngFor="let dropDown of dropDownOptions" (ngModelChange)="onChange()">
+        {{dropDown}}
+      </option>
+    </select>
+</div>
+
+<br />
+
+<table class="table">
+    <tr>
+      <th width="4%">ID</th>
+      <th width="8%">Member</th>
+      <th width="8%">Status</th>
+      <th width="8%">Rating</th>
+      <th width="8%">Screen Time</th>
+      <th width="8%">Email</th>
+      <th width="8%">Meeting</th>
+      <th width="8%">Smiles</th>
+      <th width="8%">Action</th>
+    </tr>
+    <tr *ngFor="let user of users| paginate
+    : {
+        itemsPerPage: itemsPerPage,
+        currentPage: pageId,
+        id: rpage,
+        totalItems: totalItems
+      }; let i = index">
+      <td>{{i+1}}
+      </td>
+      <td>{{user.name}}</td>
+      <td>{{user.status}}</td>
+      <td>{{user.rating}}</td>
+      <td>{{user.screenTime}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.meeting}}</td>
+      <td>{{user.smiles}} min</td>
+
+      <td>
+        <button class="btn btn-outline-primary" type="button" title="Edit" (click)="onClick(user.name)">Redirect
+          <i class="fa fa-edit" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </table>
 
 
 <script>
