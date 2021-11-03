@@ -78,7 +78,6 @@ export class BanalyticsComponent implements OnInit {
   }
 
   onChange() {
-    console.log('hi')
     this.router.navigate(["banalytics/selected/option/last_week"])
   }
   
