@@ -83,8 +83,8 @@ export class BanalyticsComponent implements OnInit {
     const ec = echarts as any; 
     var screen_time_option = {
       color: [
-        '#428bca',
-        '#5cb85c',
+        '#FF7E78',
+        '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
       ],
@@ -94,7 +94,7 @@ export class BanalyticsComponent implements OnInit {
       legend: {
     top: 'bottom',
 
-        data: ["Your Department", "Department A"]
+        data: ["Your Team", "Department Average"]
       },
       xAxis: {
         type: 'category',
@@ -105,24 +105,22 @@ export class BanalyticsComponent implements OnInit {
       },
       series: [
         {
-          name: "Your Department",
+          name: "Your Team",
           data: [550, 630, 624, 618, 635, 647, 560],
           type: 'line'
         },
         {
-          name: "Department A",
+          name: "Department Average",
           data: [530, 620, 654, 518, 635, 627, 660],
           type: 'line'
         }
       ]
     };
     
-   
-    
     var email_option = {
       color: [
-        '#428bca',
-        '#5cb85c',
+        '#FF7E78',
+        '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
       ],
@@ -132,7 +130,7 @@ export class BanalyticsComponent implements OnInit {
       legend: {
     top: 'bottom',
 
-        data: ["Your Department", "Department A"]
+        data: ["Your Team", "Department Average"]
       },
       xAxis: {
         type: 'category',
@@ -143,12 +141,12 @@ export class BanalyticsComponent implements OnInit {
       },
       series: [
         {
-          name: "Your Department",
+          name: "Your Team",
           data: [411, 427, 466, 346, 392, 368, 462],
           type: 'line'
         },
         {
-          name: "Department A",
+          name: "Department Average",
           data: [497, 332, 320, 461, 430, 436, 414],
           type: 'line'
         }
@@ -157,8 +155,8 @@ export class BanalyticsComponent implements OnInit {
     
     var smile_option = {
       color: [
-        '#428bca',
-        '#5cb85c',
+        '#FF7E78',
+        '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
       ],
@@ -168,7 +166,7 @@ export class BanalyticsComponent implements OnInit {
       legend: {
     top: 'bottom',
 
-        data: ["Your Department", "Department A"]
+        data: ["Your Team", "Department Average"]
       },
       xAxis: {
         type: 'category',
@@ -179,7 +177,7 @@ export class BanalyticsComponent implements OnInit {
       },
       series: [
         {
-          name: 'Your Department',
+          name: 'Your Team',
           type: 'bar',
           emphasis: {
             focus: 'series'
@@ -187,7 +185,7 @@ export class BanalyticsComponent implements OnInit {
           data: [116, 157, 172, 231, 131, 284, 107]
         },
         {
-          name: 'Department A',
+          name: 'Department Average',
           type: 'bar',
           emphasis: {
             focus: 'series'
@@ -199,8 +197,8 @@ export class BanalyticsComponent implements OnInit {
     
     var meetings_option = {
       color: [
-        '#428bca',
-        '#5cb85c',
+        '#FF7E78',
+        '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
       ],
@@ -210,7 +208,7 @@ export class BanalyticsComponent implements OnInit {
       legend: {
     top: 'bottom',
 
-        data: ["Your Department", "Department A"]
+        data: ["Your Team", "Department Average"]
       },
       xAxis: {
         type: 'category',
@@ -221,101 +219,32 @@ export class BanalyticsComponent implements OnInit {
       },
       series: [
         {
-          name: "Your Department",
+          name: "Your Team",
           data: [31, 54, 61, 12, 72, 20, 26],
           type: 'line'
         },
         {
-          name: "Department A",
+          name: "Department Average",
           data: [45, 19, 72, 74, 57, 74, 41],
           type: 'line'
         }
       ]
     };
     
-    var eating_while_working_option = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
-        }
-      },
-      legend: {
-            top: 'bottom',
-            data: ["Your Department", "Yue Yang"]
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-      },
-      xAxis: {
-        type: 'value'
-      },
-      yAxis: {
-        type: 'category',
-        data: ['Eating duration', 'Eating while working duration']
-      },
-      series: [
-        {
-          name: 'Your Department',
-          type: 'bar',
-          data: [2,1]
-        },
-        {
-          name: 'Yue Yang',
-          type: 'bar',
-          data: [4, 3]
-        }
-      ]
-    };
-
-    var eating_time_option = {
-           tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-              type: 'shadow'
-            }
-          },
-      xAxis: {
-        type: 'category',
-        data: ["0800", "0900", "1000", "1100", "1200", 1300, 1400, 1500, 1600, 1700, 1800]
-      },
-      yAxis: {
-        max: 60,
-        type: 'value'
-      },
-      series: [
-        {
-          data: [5, 7, 0, 0, 0, 7, 10, 0, 3, 0, 0],
-          type: 'bar',
-          showBackground: true,
-          name: 'minutes'
-        }
-      ]
-    };
-
     const screen_time_container = document.getElementById('screen-time');
     const email_container = document.getElementById('emails');
     const smile_container = document.getElementById('smiles');
     const meetings_container = document.getElementById('meetings');
-    const eating_time_container = document.getElementById('eating-time');
-    const eating_while_working_container = document.getElementById('eating-while-working');
 
     const screen_time_chart = echarts.init(screen_time_container);
     const smile_chart = echarts.init(smile_container);
     const email_chart = echarts.init(email_container);
     const meetings_chart = echarts.init(meetings_container);
-    const eating_time_chart = echarts.init(eating_time_container);
-    const eating_while_working_chart = echarts.init(eating_while_working_container);
 
     screen_time_chart.setOption(screen_time_option);
     email_chart.setOption(email_option);
     smile_chart.setOption(smile_option);
     meetings_chart.setOption(meetings_option);
-    eating_time_chart.setOption(eating_time_option);
-    eating_while_working_chart.setOption(eating_while_working_option);
 
   } 
   
