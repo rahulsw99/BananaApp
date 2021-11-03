@@ -1,1 +1,216 @@
-<p>banalytics-individual works!</p>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:#1d3150">
+    <a class="navbar-brand" href="/banalytics" style="font-family: 'Papyrus';">Banalytics</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <br />
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" style="margin: auto;">
+            <li class="nav-item" style="margin: auto;">
+                <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-bar-chart-fill" style="color:white"></i>&nbsp;Dashboard</a>
+            </li>
+            <li class="nav-item" style="margin: auto;">
+                <a class="nav-link" href="#"><span class="bi bi-table"></span>&nbsp;Tables</a>
+            </li>
+            <li class="nav-item" style="margin: auto;">
+                <a class="nav-link" href="#"><i class="bi bi-exclamation-triangle"></i>&nbsp;Alerts</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" style="color:white">
+            <i class="bi bi-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="bi bi-chat-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="bi bi-bell"></i> &nbsp;&nbsp; User &nbsp;&nbsp;
+            <i class="bi bi-chevron-down"></i>
+        </form>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <select class="form-control" id="exampleFormControlSelect1" style="color:#3F5D7E">
+                  <option>10/05/21 - 16/5/21</option>
+                  
+                </select>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+            <h3 style="color:#B1C7DF">Yue Yang&nbsp;
+                <i class="bi bi-chevron-down"></i></h3>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-primary btn-sm" style="background-color:#B1C7DF;color:#3F5D7E;margin-right: 5px;"> <i class="bi bi-cloud-download"></i>&nbsp;&nbsp;SHARE</button>
+            <button type="button" class="btn btn-primary btn-sm" style="background-color:#B1C7DF;color:#3F5D7E"><i class="bi bi-share"></i>&nbsp;&nbsp;EXPORT</button>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class='row'>
+        <div class="col-md-3">
+            <small style="color: #88E091;">+1 HOUR &nbsp;&nbsp;<i class="bi bi-arrow-up-circle-fill"></i></small>
+            <h2>50 HOURS</h2>
+            <small style="color: #7F7F7F;">Screen Time</small>
+        </div>
+        <div class="col-md-3">
+            <small style="color: #FF7E78;">-3 MEETINGS &nbsp;&nbsp;<i class="bi bi-arrow-down-circle-fill"></i></small>
+            <h2>20 MEETINGS</h2>
+            <small style="color: #7F7F7F;">Calendar Meetings</small>
+        </div>
+        <div class="col-md-3">
+            <small style="color: #88E091;">+24 &nbsp;&nbsp;<i class="bi bi-arrow-up-circle-fill"></i></small>
+            <h2>120 EMAILS</h2>
+            <small style="color: #7F7F7F;">Emails</small>
+        </div>
+        <div class="col-md-3">
+            <small style="color: #88E091;">+1.7 HOUR &nbsp;&nbsp;<i class="bi bi-arrow-up-circle-fill"></i></small>
+            <h2>2 HOURS</h2>
+            <small style="color: #7F7F7F;">Duration of Smiles</small>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+
+<div class="card">
+    <div class="card-body" style="padding: 10px;">
+        <div class='row'>
+            <div class="col-8">
+                <strong>Statistics</strong>
+                <br>
+                <small style="color: #7F7F7F;">This week</small>
+            </div>
+            <div class="col-4">
+                <i class="bi bi-gear" style="float:right;margin-right: 5px;"></i>
+                <i class="bi bi-cloud-download" style="float:right;margin-right: 5px;"></i>
+                <i class="bi bi-share" style="float:right;margin-right: 5px;"></i>
+            </div>
+        </div>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <div class='row'>
+                <div class="col">
+                    <table datatable class=" table row-border hover">
+                        <thead>
+                            <tr>
+                                <th width="4%">ID</th>
+                                <th>Statistics Type</th>
+                                <th>Status </th>
+                                <th>Rating</th>
+                                <th>Number</th>
+                                <th>Team Avg</th>
+                                <th>Department Avg</th>
+                                <th>Actions</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users| paginate
+                            : {
+                                itemsPerPage: itemsPerPage,
+                                currentPage: pageId,
+                                id: rpage,
+                                totalItems: totalItems
+                              }; let i = index">
+                                <td>{{i+1}}
+                                </td>
+                                <td>{{user.stat_type}}</td>
+                                <td>{{user.status}}</td>
+                                <td>{{user.rating}}</td>
+                                <td>{{user.number}}</td>
+                                <td>{{user.team}}</td>
+                                <td>{{user.dept}}</td>
+                                <td>
+                                    <i class="bi bi-three-dots"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col">
+                    <i class="bi bi-arrows-angle-expand"></i>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body" style="padding: 10px;">
+                <div class='row'>
+                    <div class="col-8">
+                        Amount of Time Spent Eating
+                        <br>
+                        <small style="color: #7F7F7F;">This week</small>
+                    </div>
+                    <div class="col-4">
+                        <i class="bi bi-gear" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-cloud-download" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-share" style="float:right;margin-right: 5px;"></i>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class='row'>
+                        <div class="col">
+                            <div echarts class="demo-chart" style="width: 100%; min-height: 400px" id="eating-time"></div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="col">
+                            <i class="bi bi-arrows-angle-expand"></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body" style="padding: 10px;">
+                <div class='row'>
+                    <div class="col-8">
+                        Eating While Working
+                        <br>
+                        <small style="color: #7F7F7F;">This week</small>
+                    </div>
+                    <div class="col-4">
+                        <i class="bi bi-gear" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-cloud-download" style="float:right;margin-right: 5px;"></i>
+                        <i class="bi bi-share" style="float:right;margin-right: 5px;"></i>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class='row'>
+                        <div class="col">
+                            <div echarts class="demo-chart" style="width: 100%; min-height: 400px" id="eating-while-working"></div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="col">
+                            <i class="bi bi-arrows-angle-expand"></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
