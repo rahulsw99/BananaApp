@@ -1,5 +1,4 @@
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:#1d3150">
     <a class="navbar-brand" href="#" style="font-family: 'Papyrus';">Banalytics</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,10 +34,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <select class="form-control" id="exampleFormControlSelect1" style="color:#3F5D7E">
-                  <option>10/05/21 - 16/5/21</option>
-                  
-                </select>
+            <select [(ngModel)]="selected" class="form-control col-9" style="color:#3F5D7E;display: inline;margin-right:5px">
+                
+                <option value='select'>10/11/21 - 16/11/21</option>
+                <option value="2/11/21 - 9/11/21" selected>2/11/21 - 9/11/21</option>
+
+              </select>
+            <button class="btn btn-outline-primary" type="button" title="Edit" (click)="onChange()" style="display: inline;">Go
+                <i class="fa fa-edit" aria-hidden="true"></i>
+            </button>
         </div>
         <div class="col-md-1">
         </div>
@@ -290,17 +294,6 @@
 <br />
 
 
-<div class="form-control">
-    Select XX:
-    <select [(ngModel)]="chosenDropDown">
-      <option *ngFor="let dropDown of dropDownOptions" [value]="dropDown">
-        {{dropDown}}
-      </option>
-    </select>
-    <br />
-    <button class="btn btn-outline-primary" type="button" title="Edit" (click)="onChange()">Go
-        <i class="fa fa-edit" aria-hidden="true"></i>
-    </button>
-</div>
+
 
 <br />

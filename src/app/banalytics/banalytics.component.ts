@@ -19,8 +19,9 @@ export class BanalyticsComponent implements OnInit {
   chosenDropDown: any;
 
   dropDownOptions: any[] = [
-    "A", "B", "C"
+    "10/11/21 - 16/11/21", "2/11/21 - 9/11/21"
   ]
+  selected = "select"
 
   users: any[] = [
     {
@@ -77,7 +78,8 @@ export class BanalyticsComponent implements OnInit {
   }
 
   onChange() {
-    this.router.navigate(["banalytics/selected/option/" + this.chosenDropDown])
+    console.log('hi')
+    this.router.navigate(["banalytics/selected/option/last_week"])
   }
   
   
