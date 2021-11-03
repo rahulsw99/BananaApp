@@ -28,10 +28,11 @@
     "echarts-gl": "^2.0.8",
     "jquery": "^3.6.0",
     "ngx-echarts": "^7.0.2",
+    "ngx-pagination": "^5.0.0",
+    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2",
-    "ngx-pagination": "^5.0.0"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.6",

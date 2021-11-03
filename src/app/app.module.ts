@@ -7,17 +7,22 @@ import { BanalyticsComponent } from './banalytics/banalytics.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxPaginationModule } from "ngx-pagination";
 import { BanalyticsIndividualComponent } from './banalytics-individual/banalytics-individual.component';
+import { BanalyticsSelectedOptionComponent } from './banalytics-selected-option/banalytics-selected-option.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     BanalyticsComponent,
-    BanalyticsIndividualComponent
+    BanalyticsIndividualComponent,
+    BanalyticsSelectedOptionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DataTablesModule,
     NgxPaginationModule,
+    FormsModule,
     NgxEchartsModule.forRoot({
       /**
        * This will import all modules from echarts.
