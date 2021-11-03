@@ -16,6 +16,8 @@ export class BanalyticsComponent implements OnInit {
   itemsPerPage = 30;
   totalItems = 30;
 
+  chosenDropDown: any;
+
   dropDownOptions: any[] = [
     "A", "B", "C"
   ]
@@ -75,7 +77,7 @@ export class BanalyticsComponent implements OnInit {
   }
 
   onChange() {
-    
+    this.router.navigate(["banalytics/selected/option/" + this.chosenDropDown])
   }
   
   
