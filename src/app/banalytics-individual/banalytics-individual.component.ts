@@ -63,12 +63,12 @@ export class BanalyticsIndividualComponent implements OnInit {
       dept: "85%"
     },
     {
-      stat_type: "Smile Duration",
+      stat_type: "Stress Index",
       status: "Poor",
       rating: "20%",
-      number: "2 Hours",
-      team: "2.3 Hours", 
-      dept: "3 hours"
+      number: "20%",
+      team: "24%", 
+      dept: "30%"
     },
     
   ]
@@ -89,7 +89,7 @@ export class BanalyticsIndividualComponent implements OnInit {
     
     var eating_while_working_option = {
       color: [
-        '#FF7E78',
+        '#9290FE',
         '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
@@ -133,7 +133,7 @@ export class BanalyticsIndividualComponent implements OnInit {
 
     var eating_time_option = {
       color: [
-        '#FF7E78',
+        '#9290FE',
         '#6BE2BE',
         '#d9534f',
         '#f0ad4e'

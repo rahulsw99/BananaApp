@@ -86,7 +86,7 @@ export class BanalyticsComponent implements OnInit {
     const ec = echarts as any; 
     var screen_time_option = {
       color: [
-        '#FF7E78',
+        '#9290FE',
         '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
@@ -122,7 +122,7 @@ export class BanalyticsComponent implements OnInit {
     
     var email_option = {
       color: [
-        '#FF7E78',
+        '#9290FE',
         '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
@@ -158,7 +158,7 @@ export class BanalyticsComponent implements OnInit {
     
     var smile_option = {
       color: [
-        '#FF7E78',
+        '#9290FE',
         '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
@@ -200,7 +200,7 @@ export class BanalyticsComponent implements OnInit {
     
     var meetings_option = {
       color: [
-        '#FF7E78',
+        '#9290FE',
         '#6BE2BE',
         '#d9534f',
         '#f0ad4e'

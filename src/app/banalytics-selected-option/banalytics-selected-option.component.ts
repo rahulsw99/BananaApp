@@ -88,7 +88,7 @@ export class BanalyticsSelectedOptionComponent implements OnInit {
     const ec = echarts as any; 
     var screen_time_option = {
       color: [
-        '#FF7E78',
+        '#9290FE',
         '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
@@ -124,7 +124,7 @@ export class BanalyticsSelectedOptionComponent implements OnInit {
     
     var email_option = {
       color: [
-        '#FF7E78',
+        '#9290FE',
         '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
@@ -160,7 +160,7 @@ export class BanalyticsSelectedOptionComponent implements OnInit {
     
     var smile_option = {
       color: [
-        '#FF7E78',
+        '#9290FE',
         '#6BE2BE',
         '#d9534f',
         '#f0ad4e'
@@ -187,7 +187,7 @@ export class BanalyticsSelectedOptionComponent implements OnInit {
           emphasis: {
             focus: 'series'
           },
-          data: [119, 157, 142, 131, 161, 234, 107]
+          data: [49, 57, 42, 31, 61, 34, 67]
         },
         {
           name: 'Department Average',
@@ -195,14 +195,14 @@ export class BanalyticsSelectedOptionComponent implements OnInit {
           emphasis: {
             focus: 'series'
           },
-          data: [220, 135, 151, 144, 110, 130, 213]
+          data: [220, 35, 51, 44, 10, 30, 13]
         }
       ]
     };
     
     var meetings_option = {
       color: [
-        '#FF7E78',
+        '#9290FE',
         '#6BE2BE',
         '#d9534f',
         '#f0ad4e'

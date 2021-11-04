@@ -7,7 +7,8 @@ import { BanalyticsComponent } from './banalytics/banalytics.component';
 const routes: Routes = [
   { path: "banalytics", component: BanalyticsComponent },
   { path: "banalytics/individual/:name", component: BanalyticsIndividualComponent},
-  { path: "banalytics/selected/option/:chosenDropDown", component:BanalyticsSelectedOptionComponent  }
+  { path: "banalytics/selected/option/:chosenDropDown", component:BanalyticsSelectedOptionComponent  },
+  { path: '',   redirectTo: '/banalytics', pathMatch: 'full' },
 ];
 
 @NgModule({
